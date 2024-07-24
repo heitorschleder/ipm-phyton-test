@@ -3,10 +3,10 @@ Python 3.5+ - https://www.python.org/
 
 # Após clonar e entrar na pasta do projeto rodar:
 pip install virtualenv (caso não tenha instalado)
-python -m venv venv
+py -3 -m venv .venv
 
 # Para ativar no windows:
-./venv/Scripts/activate.bat
+.venv\Scripts\activate
 
 # Para ativar no Linux/Mac:
 source venv/bin/activate
