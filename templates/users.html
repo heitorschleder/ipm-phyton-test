@@ -1,0 +1,90 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Users</title>
+  </head>
+  <body>
+    <h1>Random Users</h1>
+    <ul class="card-container">
+      {% for user in users %}
+      <li class="card">
+        <div class="imageArea">
+          <img
+            class="photoUser"
+            src="{{ user['picture']['thumbnail'] }}"
+            alt="Profile Picture"
+          />
+        </div>
+        <div class="textArea">
+          <h2>
+            {{ user['name']['first'] }} {{ user['name']['last'] }}
+          </h2>
+          <p>{{ user['email'] }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
+<style>
+  * {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    background-color: azure;
+  }
+
+  h1 {
+    margin-bottom: -10px;
+    margin-top: 20px;
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .textArea {
+    justify-content: center;
+    align-items: center;
+  }
+  .imageArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+  }
+  .card {
+    display: flex;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .card img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .card h2 {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .card p {
+    margin: 0;
+    font-size: 12px;
+    color: #555555;
+    text-align: center;
+  }
+</style>
