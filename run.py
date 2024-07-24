@@ -1,8 +1,7 @@
 from flask import Flask, render_template
 import requests
 
-
-app = Flask(__name__)
+app = Flask(__name__, template_folder='app/templates')
 
 @app.route("/")
 def render_template_users():
@@ -17,6 +16,7 @@ def get_users():
         return{"status_code": response.status_code, "message": "operation sucessful", "users":response.json()['results']}
     except:
         return {"status_code": 500, "message": "conection error", "users":[]}
+    
 
 if __name__ == '__main__':
     app.run()
