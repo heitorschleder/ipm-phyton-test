@@ -12,7 +12,7 @@ python -m venv venv
 source venv/bin/activate
 
 # Após criar e ativar a virtualenv rodar:
-pip install requirements.txt
+pip install -r requirements.txt
 
 # Após instalar os requirements
 flask run --host=0.0.0.0
